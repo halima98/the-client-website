@@ -1,1 +1,285 @@
-/* CSS */
+body{
+    background-color: #111111;
+    color: #F5F5F5;
+}
+
+@font-face {
+    font-family: 'CalvinoGrande';
+    src: url('/assets/fonts/Calvino-Grande-Extrabold-trial.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/assets/fonts/Figtree-Bold.woff2') format('woff2'),
+         url('/assets/fonts/Figtree-Bold.woff') format('woff'),
+         url('/assets/fonts/Figtree-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dropheal-logo {
+    display: block;
+    margin: auto;
+    width: 20%;
+    padding-bottom: 5em;
+    padding-top: 10em ;
+   
+}
+
+.introduction-text {
+    font-family: 'Figtree';
+    font-size: 1.2em;
+    font-weight: lighter;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin: auto;
+    width: 30em;
+}
+
+.action-button {
+    font-family: 'Figtree', sans-serif;
+    border: 1px solid #F5F5F5;
+    cursor: pointer;
+    color: #F5F5F5;
+    border-radius: 1em;
+    font-size: 1em;
+    height: 30px;
+    padding: 0 2em;
+    background: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 2.5em;
+  }
+  
+
+.action-button:hover{
+    border:1px solid #74DFDC;
+    box-shadow: rgb(49 172 236 / 60%) 0px 1px 40px;
+    transition: all 0.1s ease 0s;
+}
+
+
+.blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px; 
+    height: 450px; 
+    border-radius: 200%;
+    background-color: #31aaec95;
+    filter: blur(150px);
+    transition: all 450ms ease-out;
+    position: fixed; 
+    pointer-events: none;
+    left: 0; 
+    top: 0; 
+    transform: translate(calc(-50% + 15px), -50%); 
+    z-index: -1; 
+    animation: shift-back;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.color-1:hover ~ .blob {
+    animation: shift-1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+ }
+
+@keyframes shift-1 {
+    to {background-color: #2F687E;}
+}
+
+
+/* STYLING FOR EXPLANATION PAGE OF DROP & HEAL*/
+
+.content-section {
+    font-family: 'Figtree';
+    font-size: 1.2em;
+    font-weight: lighter;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin: auto;
+    width: 30em;
+    padding-top: 10em;
+    z-index: 1;
+}
+
+.background-image {
+    position: absolute;
+    z-index: -1;
+    right: 0; 
+    top: 0;
+    height: 100%; 
+    width: auto; 
+    opacity: 0.5;
+}
+
+.center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 5em;
+  }
+
+.round-action-button {
+   background-color: transparent;
+   border: 1px solid #F5F5F5;
+   cursor: pointer;
+   color: #F5F5F5;
+   border-radius: 100%;
+   padding: 1em;  
+}
+
+.material-symbols-rounded {
+    font-size: 2em;        
+}
+
+.round-action-button:hover{
+    border:1px solid #74DFDC;
+    box-shadow: rgb(49 172 236 / 60%) 0px 1px 40px;
+    transition: all 0.1s ease 0s;
+    
+}
+
+/* Rouwtaken styling */
+
+.rouwtaken-text-content{
+    font-family: 'Figtree', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin: auto;
+    max-width: 40em;
+    margin-bottom: 1em;
+}
+
+
+.rouwtaken-title {
+    font-family: 'CalvinoGrande';
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    margin: auto;
+    max-width: 50%;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+    margin-bottom: 2em;
+    cursor: pointer;
+    
+}
+
+
+
+.image-container {
+    position: relative; 
+}
+
+.blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px; 
+    height: 450px; 
+    border-radius: 200%;
+    background-color: #7C6097;
+    filter: blur(150px);
+    transition: all 450ms ease-out;
+    position: fixed; 
+    pointer-events: none;
+    left: 0; 
+    top: 0; 
+    transform: translate(calc(-50% + 15px), -50%); 
+    z-index: -1; 
+    animation: shift-back;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.color-1:hover ~ .blob {
+    animation: shift-1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+ }
+
+
+.color-2:hover ~ .blob {
+    animation: shift-2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.color-3:hover ~ .blob {
+    animation: shift-3;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.color-4:hover ~ .blob {
+    animation: shift-4;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes shift-1 {
+    to {background-color: #2F687E;}
+}
+
+@keyframes shift-2 {
+    to {background-color: #8C3138;}
+}
+@keyframes shift-3 {
+    to {background-color: #835429;}
+}
+@keyframes shift-4 {
+    to {background-color: #B66066;}
+}
+
+@keyframes shift-back {
+    from {background-color: #251534;}
+    to {background-color: #7C6097;}
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 5em;
+}
+
+#back{
+    background-color: transparent;
+    border: 2px solid #F5F5F5;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+#forward{
+    background-color: transparent;
+    border: 2px solid #F5F5F5;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.material-icons{
+    color: #F5F5F5;
+}
