@@ -29,30 +29,85 @@ body {
 }
 
 /* Logo Drop&Heal stlyling */
-.dropheal-logo {
+.dropheal-logo, .drop-and-heal-logo-2 {
     display: block;
     margin: auto;
-    width: 20%;
-    padding: 10em 0 5em; 
+    width: clamp(150px, 20%, 600px); /* Adjusts width for mobile */
+    padding: clamp(2em, 10vw, 10em) 0 clamp(1em, 5vw, 5em); /* Responsive padding */
+    transform: scale(0);
+    animation: zoomIn 2s forwards; /* Slower zoom */
 }
 
+.drop-and-heal-logo-2{
+    display: block;
+    margin: auto;
+    width: clamp(150px, 10%, 600px); /* Adjusts width for mobile */
+    padding: clamp(2em, 10vw, 10em) 0 clamp(1em, 5vw, 5em); /* Responsive padding */
+    transform: scale(0);
+    animation: zoomIn 2s forwards; /* Slower zoom */
+}
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Text Styles */
-.introduction-text, .content-section, .rouwtaken-text-content {
+.introduction-text, .rouwtaken-text-content{
     font-family: 'Figtree';
-    font-size: 1.2em;
+    font-size: clamp(0.5em, 4.2vw, 1.2em);
     font-weight: lighter;
     line-height: 1.5;
     letter-spacing: 0.02em;
     margin: auto;
-    width: 30em;
+    width: clamp(90%, 30em, 100%); 
+    max-width: 30em;
+    padding: 0 1em; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+    animation-delay: 2s;
 }
+
+.content-explanation{
+    font-family: 'Figtree';
+    font-size: clamp(0.5em, 4.2vw, 1.2em);
+    font-weight: lighter;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin:auto;
+    margin-bottom: 1em;
+    width: clamp(90%, 30em, 100%); 
+    max-width: 30em;
+    padding: 0 1em; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+    animation-delay: 2s;
+
+}
+
 
 .rouwtaken-title {
     font-family: 'CalvinoGrande';
     font-size: 2.5em;
-    margin: auto;
     max-width: 50%;
-    margin-bottom: 2em;
+    margin:auto;
+    margin-top: 4em;
 }
 
 /* Buttons */
@@ -70,6 +125,10 @@ body {
     margin-right: auto;
     display: block;
     margin-top: 2.5em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+    animation-delay: 3s; /* Delay until text has appeared */
 }
 
 .action-button:hover, .round-action-button:hover {
@@ -79,9 +138,15 @@ body {
 }
 
 .round-action-button {
+    border: 1px solid #F5F5F5;
+    cursor: pointer;
     border-radius: 50%;
     background-color: transparent;
     padding: 1em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+    animation-delay: 3s; /* Delay until text has appeared */
 }
 
 /* Material Icons */
@@ -95,9 +160,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 450px; 
-    height: 450px; 
-    border-radius: 200%;
+    width: 350px; 
+    height: 350px; 
+    border-radius: 250%;
     background-color: #31aaec95; 
     filter: blur(150px);
     transition: all 450ms ease-out;
@@ -145,14 +210,9 @@ body {
 
 @keyframes shift-back {
     from { background-color: #251534; }
-    to { background-color: #7C6097; }
+    to { background-color: #551a1a; }
 }
 
-/* Content Section */
-.content-section {
-    padding-top: 10em;
-    z-index: 1;
-}
 
 /* Background Images */
 .background-image {
@@ -193,8 +253,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5em;
-    margin-top: 5em;
+    gap: clamp(1em, 2vw, 1.5em); 
+    margin-top: clamp(2em, 5vw, 5em);
 }
 
 /* Buttons */
@@ -202,6 +262,19 @@ body {
     background-color: transparent;
     border: 2px solid #F5F5F5;
     border-radius: 50%;
-    padding: 15px;
+    padding: clamp(10px, 2vw + 5px, 15px);
+    width: clamp(50px, 10vw, 70px); 
+    height: clamp(50px, 10vw, 70px); 
     cursor: pointer;
+    transition: transform 0.3s;
 }
+
+
+/* styles/styles.css */
+.rouwtaken-image-container {
+    display: flex;               
+    justify-content: center;  
+    padding: 10em; 
+    gap: 5em;             
+}
+
